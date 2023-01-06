@@ -11,7 +11,7 @@ A ToDo App built using the MVC Architecture, it also has implemented "authorizat
 
 # Packages/Dependencies used 
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator, bootstrap, jquery
 
 ---
 
