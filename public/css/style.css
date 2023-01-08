@@ -1,6 +1,40 @@
-h1{
-    color: red;
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
 }
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
 .completed{
     text-decoration: line-through;
     color: gray;
@@ -8,3 +42,12 @@ h1{
 .not{
     text-decoration: underline;
 }
+
+
+
+
+
+
+
+
+
