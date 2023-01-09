@@ -23,12 +23,34 @@
 
 
 
-
 /******************************************
 /* LAYOUT
 /*******************************************/
 
+/*frontpage*/
+.mainTitle{
+height: 100px;
+left: 15px;
+top: 67px;
 
+font-style: italic;
+font-weight: 300;
+font-size: 96px;
+line-height: 116px;
+text-align: center;
+
+color: #000000;
+}
+
+.rectangle1{
+    height: 450px;
+    background: #8AD0ED;
+}
+
+.d-grid{
+    justify-items: center;
+    
+}
 
 /******************************************
 /* ADDITIONAL STYLES
