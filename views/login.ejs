@@ -10,26 +10,35 @@
 
     
 </head>
-<body>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Trave-Lista</span>
-        </div>
-     </nav>
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
-    <% if (locals.messages.info) { %>
-        <% messages.info.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
+<body class="logInPage">
+    
+    <main class="form-signin w-100 m-auto">
+        <% if (locals.messages.errors) { %>
+            <% messages.errors.forEach( el => { %>
+                <div class="alert alert-danger"><%= el.msg %></div>
+            <% }) %>    
+     <% } %>
+        <% if (locals.messages.info) { %>
+            <% messages.info.forEach( el => { %>
+             <div class="alert alert-danger"><%= el.msg %></div>
+         <% }) %>    
+     <% } %>
     <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
+        <h3 class="mb-3 fw-normal">Please Sign In</h3>
+       
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+            <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating mb-5">
+            <input type="password" class="form-control" id="floatingPassword"name="password" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class=" w-100 btn btn-lg btn-secondary" type="submit">Sign In 
+        </button>
+        <p class="mt-5 mb-3 text-muted">© 2022</p>
     </form>
+    </main>
+
 </body>
 </html>
