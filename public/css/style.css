@@ -20,10 +20,10 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
-html,
+/*html,
 body {
   height: 100%;
-}
+}*/
 
 
 
@@ -33,25 +33,10 @@ body {
 /*******************************************/
 
 /*frontpage*/
-.mainTitle{
-
-height: 200px;
-left: 15px;
-top: 67px;
-font-style: italic;
-font-weight: 200;
-font-size: 96px;
-line-height: 116px;
-text-align: center;
-color: #000000;
-
+.mainPage{
+    display: block;
 }
 
-.rectangle1{
-    height: 450px;
-    background: #8AD0ED;
-    margin-top: 10%;
-}
 
 
 /*Sign In*/
