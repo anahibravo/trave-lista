@@ -5,7 +5,7 @@ moongose gives us a way to model our application data
 helps us create each "document" or object
 */
 
-const TodoSchema = new mongoose.Schema({
+/*const TodoSchema = new mongoose.Schema({
   todo: {
     type: String,
     required: true,
@@ -18,7 +18,29 @@ const TodoSchema = new mongoose.Schema({
     type: String,
     required: true
   }
+})*/
+
+
+// todo list array attempt 
+
+const TodoSchema = new mongoose.Schema({
+
+  todo: {
+    type: String,
+    required: true,
+  },
+  completed: {
+    type: Boolean,
+    required: true,
+  },
+  userId: {
+    type: String,
+    required: true
+  }
+
 })
+
+
 
 module.exports = mongoose.model('Todo', TodoSchema)
 mongoose.set('strictQuery', false);
