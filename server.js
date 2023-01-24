@@ -10,6 +10,7 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
+//require the model created
 const Todo = require('./models/Todo')
 
 //Load config/ use the environment variables
@@ -62,3 +63,5 @@ app.use('/todos', todoRoutes)
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
 })    
+
+

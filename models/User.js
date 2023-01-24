@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
+
 /*
 without having access to the db you will know the schema 
 */ 
@@ -8,6 +9,7 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String
 })
+//model for the todos into array 
 
 
 // Password hash middleware. This helps encrypt the passwords used
@@ -32,5 +34,6 @@ UserSchema.methods.comparePassword = function comparePassword(candidatePassword,
     cb(err, isMatch)
   })
 }
+
 
 module.exports = mongoose.model('User', UserSchema)

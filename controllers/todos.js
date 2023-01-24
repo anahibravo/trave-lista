@@ -1,11 +1,12 @@
 const Todo = require('../models/Todo')
+const Destination = require("../models/Destination")
+
 /*
 when you create a to do will be under the logged in user id
 with the id you know what documents to grab
 */ 
 module.exports = {
     getTodos: async (req,res)=>{
-        console.log(req.user)
         try{
             const todoItems = await Todo.find({userId:req.user.id})
             const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
@@ -16,7 +17,7 @@ module.exports = {
     },
     createTodo: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
+            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})      
             console.log('Todo has been added!')
             res.redirect('/todos')
         }catch(err){
@@ -54,5 +55,26 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    }
+    },
+    // create a new destination
+    createDestination: async (req, res) => {
+        try{
+          await Destination.create({title: req.body.titleDestination})
+          console.log('Destination added!')
+          res.redirect('/todos')
+        } catch (err){
+          console.log(err);
+        }
+      },
+      // get the new created destination
+      getDestination: async (req,res)=>{
+        console.log(req.user)
+        try{
+            const newDestination = await Destination.find({userId:req.user.id})
+            res.render('todos.ejs', {title: newDestination})
+        }catch(err){
+            console.log(err)
+        }
+    }, 
+
 }    

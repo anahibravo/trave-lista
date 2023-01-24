@@ -10,21 +10,28 @@
 </head>
 
 <body>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-body-tertiary mb-3">
         <div class="container-fluid">
           <span class="navbar-brand mb-0 h1">Trave-Lista</span>
         </div>
      </nav>
-    <h1>Packing List</h1>
-    <ul>
-    <% todos.forEach( el => { %>
+    <section class="destination">
+        <h1>des</h1>
+            <div><div>
+    
+    </section>
+    
+    <section class="todo-container">
+        <h3>Packing List</h3>
+         <ul>
+          <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
                 <span class='del'> Delete </span>
             </li>
-    <% }) %>    
-    </ul>
-
+         <% }) %>    
+         </ul>
+    </section> 
     <h2><%= user.userName %> has <%= left %> things left to do.</h2>
 
     <form action="/todos/createTodo" method='POST'>
