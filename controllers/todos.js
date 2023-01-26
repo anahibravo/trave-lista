@@ -68,13 +68,25 @@ module.exports = {
       },
       // get the new created destination
       getDestination: async (req,res)=>{
-        console.log(req.user)
         try{
-            const newDestination = await Destination.find({userId:req.user.id})
-            res.render('todos.ejs', {title: newDestination})
+            const newDestination = await Destination.find({title:''})
+            res.render('todos.ejs', {titles: newDestination})
         }catch(err){
             console.log(err)
         }
     }, 
 
 }    
+
+/*
+getDestination: async (req, res)=>{
+        try{
+            Destination.find({}, (err, destinations) => {
+                res.render('todos.ejs', {titles: destinations})
+                console.log(titles)
+            })  
+        }catch(err){
+            console.log(err)
+        }
+    }, 
+ */
