@@ -56,6 +56,15 @@ module.exports = {
             console.log(err)
         }
     },
+    // get the new created destination
+    getDestination: async (req,res)=>{
+        try{
+            const newDestination = await Destination.find({title:''})
+            res.render('todos.ejs', {titles: newDestination})
+        }catch(err){
+            console.log(err)
+        }
+    }, 
     // create a new destination
     createDestination: async (req, res) => {
         try{
@@ -66,15 +75,7 @@ module.exports = {
           console.log(err);
         }
       },
-      // get the new created destination
-      getDestination: async (req,res)=>{
-        try{
-            const newDestination = await Destination.find({title:''})
-            res.render('todos.ejs', {titles: newDestination})
-        }catch(err){
-            console.log(err)
-        }
-    }, 
+      
 
 }    
 
