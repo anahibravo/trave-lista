@@ -4,6 +4,10 @@ const DestinationSchema = new mongoose.Schema({
  title: {
     type: String,
     required: true,
+  },
+  userId: {
+    type: String,
+    required: true
   }
 })
 
