@@ -11,5 +11,5 @@ const DestinationSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('Destination', DestinationSchema,'destinations')
+module.exports = mongoose.model('Destination', DestinationSchema)
 mongoose.set('strictQuery', false);

@@ -1,15 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const todosController = require('../controllers/todos') 
-const profileController = require('../controllers/profile') 
+//const profileController = require('../controllers/profile') 
+const destinationController = require('../controllers/destination')
 const { ensureAuth } = require('../middleware/auth')
 const logoutController = require('../controllers/auth')
 
 router.get('/', ensureAuth, todosController.getTodos)
 //route to new destination
-router.post('/createDestination', todosController.createDestination)
-
-router.get('/getDestination', todosController.getDestination)
+router.post('/createDestination', destinationController.createDestination)
 
 router.post('/createTodo', todosController.createTodo)
 

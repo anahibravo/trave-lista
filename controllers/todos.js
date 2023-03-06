@@ -1,5 +1,5 @@
 const Todo = require('../models/Todo')
-const Destination = require("../models/Destination")
+const Destination = require('../models/Destination')
 
 /*
 when you create a to do will be under the logged in user id
@@ -7,10 +7,12 @@ with the id you know what documents to grab
 */ 
 module.exports = {
     getTodos: async (req,res)=>{
+        const userId = req.user.id
         try{
-            const todoItems = await Todo.find({userId:req.user.id})
-            const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+            const titleDestination = await Destination.find({userId})
+            const todoItems = await Todo.find({userId})
+            const itemsLeft = await Todo.countDocuments({userId, completed: false})
+            res.render('todos.ejs', {destinations: titleDestination, todos: todoItems, left: itemsLeft})
         }catch(err){
             console.log(err)
         }
@@ -56,38 +58,6 @@ module.exports = {
             console.log(err)
         }
     },
-    // get the new created destination
-    getDestination: async (req,res)=>{
-        try{
-            const newDestination = await Destination.find({title:''})
-            res.render('todos.ejs', {titles: newDestination})
-        }catch(err){
-            console.log(err)
-        }
-    }, 
-    // create a new destination
-    createDestination: async (req, res) => {
-        try{
-          await Destination.create({title: req.body.titleDestination, userId: req.user.id})
-          console.log('Destination added!')
-          res.redirect('/todos')
-        } catch (err){
-          console.log(err);
-        }
-      },
-      
+    
+}
 
-}    
-
-/*
-getDestination: async (req, res)=>{
-        try{
-            Destination.find({}, (err, destinations) => {
-                res.render('todos.ejs', {titles: destinations})
-                console.log(titles)
-            })  
-        }catch(err){
-            console.log(err)
-        }
-    }, 
- */

@@ -8,10 +8,13 @@ const flash = require('express-flash')
 //morgan is the log that keeps the events written down 
 const logger = require('morgan')
 const connectDB = require('./config/database')
+//require the routes created
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
+
 //require the model created
 const Todo = require('./models/Todo')
+const Destination = require('./models/Destination')
 
 //Load config/ use the environment variables
 require('dotenv').config({path: './config/.env'})

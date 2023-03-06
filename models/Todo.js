@@ -21,7 +21,5 @@ const TodoSchema = new mongoose.Schema({
 })
 
 
-
-
 module.exports = mongoose.model('Todo', TodoSchema)
 mongoose.set('strictQuery', false);
