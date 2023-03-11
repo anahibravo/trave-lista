@@ -18,4 +18,5 @@ connectDB().then(() => {
   })
 })
 
+
 module.exports = connectDB
