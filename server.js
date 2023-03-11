@@ -59,7 +59,11 @@ app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
 
 //Connecting to DB
-connectDB()
+connectDB().then(() => {
+  app.listen(PORT, () => {
+      console.log("listening for requests");
+  })
+})
 
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
